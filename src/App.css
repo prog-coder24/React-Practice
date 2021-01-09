@@ -1,0 +1,19 @@
+.image {
+  width: 400px;
+  height: 400px;
+}
+.car {
+  background-color: #eee;
+  width: 400px;
+  max-width: 400px;
+}
+.red {
+  background-color: red;
+}
+.purple {
+  background-color: purple;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
