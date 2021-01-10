@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import Car from "./Car";
 
-let cars = [
+let carsArray = [
   {
     id: 1,
     color: "purple",
@@ -43,25 +43,28 @@ let cars = [
 ];
 
 const Home = () => {
+  const [cars, setCars] = useState(carsArray);
+
+  const mapper = cars.map((c) => {
+    return (
+      <Car
+        key={c.id}
+        color={c.color}
+        image={c.image}
+        type={c.type}
+        capacity={c.capacity}
+        registration={c.registration}
+      />
+    );
+  });
+  console.log(cars.length);
   return (
     <div className="App">
       <Header name="John" />
       <a href="/about">View About Page</a>
       <div className="wrapper">
-        {cars.map((c) => {
-          return (
-            <Car
-              key={c.id}
-              color={c.color}
-              image={c.image}
-              type={c.type}
-              capacity={c.capacity}
-              registration={c.registration}
-            />
-          );
-        })}
+        {cars.length > 0 ? mapper : <p>No Cars Found</p>}
       </div>
-
       <Footer name="John's" color="Red" />
     </div>
   );

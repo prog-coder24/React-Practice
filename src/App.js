@@ -4,6 +4,7 @@ import Home from "./Home";
 import About from "./About";
 import Tesla from "./Tesla";
 import Jaguar from "./Jaguar";
+import FormComponent from "./Form";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/about" component={About} />
         <Route path="/tesla" component={Tesla} />
         <Route path="/jaguar" component={Jaguar} />
+        <Route path="/form" component={FormComponent} />
       </Switch>
     </Router>
   );
